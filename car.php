@@ -4,6 +4,11 @@
         public $make_model;
         public $price;
         public $miles;
+
+        function worthBuying($max_price)
+        {
+            return $this->price < $max_price;
+        }
     }
 
     $honda = new Car();
@@ -46,7 +51,7 @@
     <h1>Your Car Dealership</h1>
     <ul>
         <?php
-            foreach ($cars as $car) {
+            foreach ($cars_matching_search as $car) {
                 echo "<li> $car->make_model </li>";
                 echo "<ul>";
                     echo "<li> $$car->price </li>";
