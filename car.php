@@ -79,6 +79,9 @@ foreach ($cars as $car) {
     <h1>Your Car Dealership</h1>
     <ul>
         <?php
+        if(empty($cars_matching_search)) {
+            echo "your search parameters did not return any results";
+        }
         foreach ($cars_matching_search as $car) {
             $car_price = $car->getPrice();
             $car_model = $car->getModel();
