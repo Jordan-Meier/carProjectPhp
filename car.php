@@ -1,7 +1,7 @@
 <?php
     class Car
     {
-        public $make_model;
+        private $make_model;
         private $price;
         public $miles;
 
@@ -15,10 +15,11 @@
 
         function setPrice($new_price)
         {
-            $float_price = (int)$new_price;
+            $float_price = (float) $new_price;
             if ($float_price != 0) {
                 $this->price = $float_price;
-            } else {
+            }
+            else {
               $this->price = $new_price;
             }
         }
@@ -26,6 +27,11 @@
         function getPrice()
         {
             return $this->price;
+        }
+
+        function getModel()
+        {
+            return $this->make_model;
         }
 
         function worthBuying($max_price)
@@ -39,7 +45,7 @@
     $tesla = new Car("2014 Tesla Model S", 5000, 35000);
     $nissan = new Car("2013 Nissan Leaf", 8000, 20000);
     $toyota = new Car("2009 Toyota Prius", 20000, 15000);
-    $toyota->setPrice("12000.90");
+    $toyota->setPrice("$12000");
 
     $cars = array($honda, $tesla, $nissan, $toyota);
 
@@ -63,7 +69,8 @@
         <?php
             foreach ($cars_matching_search as $car) {
               $car_price = $car->getPrice();
-                echo "<li> $car->make_model </li>";
+              $car_model = $car->getModel();
+                echo "<li> $car_model </li>";
                 echo "<ul>";
                     echo "<li> $$car_price </li>";
                     echo "<li> Miles: $car->miles </li>";
