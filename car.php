@@ -19,6 +19,11 @@
     }
 
 
+    $honda = new Car("1999 Honda CRV", 6000, 90000);
+    $tesla = new Car("2014 Tesla Model S", 35000, 5000);
+    $nissan = new Car("2013 Nissan Leaf", 20000, 8000);
+    $toyota = new Car("2009 Toyota Prius", 15000, 20000);
+
     $cars = array($honda, $tesla, $nissan, $toyota);
 
     $cars_matching_search = array();
