@@ -27,6 +27,13 @@
     $toyota->miles = 20000;
 
     $cars = array($honda, $tesla, $nissan, $toyota);
+
+    $cars_matching_search = array();
+    foreach ($cars as $car) {
+        if ($car->price < $_GET["price"]) {
+            array_push($cars_matching_search, $car);
+    }
+}
 ?>
 
 
